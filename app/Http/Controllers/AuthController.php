@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -100,7 +101,8 @@ class AuthController extends Controller
     //opening forget password edit page
     function updateForm($id)
     {
-        $admin = Admin::find($id);
+        $idd=Crypt::decryptString($id);
+        $admin = Admin::find($idd);
         return view('reset-password', compact('admin'));
     }
     function update(Request $request)

@@ -31,6 +31,7 @@
         <span class="flex shadow-md mb-5 text-xs">
             <span class="bg-indigo-500 w-28 font-bold text-center text-gray-200 p-3 px-5 rounded-l">Password</span><input class="field text-sm text-gray-600 p-2 px-3 rounded-r w-full" type="text" name="password" placeholder="someonespecial@example.com">
         </span>
+
         <input type="hidden" name="id" value="{{$admin->id}}">
         <div class="text-red-500 -mt-2 p-0 text-sm"> @error('password'){{ $message }} @enderror</div>
         <span class="flex shadow-md mb-5 text-xs">
